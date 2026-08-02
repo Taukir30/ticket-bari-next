@@ -34,7 +34,7 @@ export default function Navbar() {
       <MyNavLink href="/about">About</MyNavLink>
       <MyNavLink href="/contact">Contact</MyNavLink>
       {!isPending && user && (
-        <MyNavLink href="/dashboard">Dashboard</MyNavLink>
+        <MyNavLink href={`/dashboard/${user.role}`}>Dashboard</MyNavLink>
       )}
     </>
   );

@@ -13,7 +13,7 @@ const BookedCard = ({ bookedData }) => {
 
   const hasDeparturePassed = departureTime <= now;
 
-  const isPaymentDisabled = hasDeparturePassed || bookedData.status == 'pending';
+  const isPaymentDisabled = hasDeparturePassed || bookedData.status == 'pending' || bookedData.status === "rejected";
 
   // Format the ISO date string into something human-readable
   const formattedDate = new Date(bookedData.departure_date_time).toLocaleString(
@@ -121,12 +121,20 @@ const BookedCard = ({ bookedData }) => {
           </div>
 
           {/* countdoun */}
-          <div className="flex flex-col items-center">
-            <span className="text-slate-700 text-sm font-semibold">
-              Time Left:
-            </span>
-            <Countdown departureDate={bookedData.departure_date_time} small={true} ></Countdown>
-          </div>
+          {bookedData.status === "rejected" ? (
+            <div className="flex flex-col items-center">
+              <span className="text-red-600 font-semibold text-sm py-5">
+                ❌ Booking Rejected
+              </span>
+            </div>
+          ) : (
+            <div className="flex flex-col items-center">
+              <span className="text-slate-700 text-sm font-semibold">
+                Time Left:
+              </span>
+              <Countdown departureDate={bookedData.departure_date_time} small={true} />
+            </div>
+          )}
         </div>
 
         {/* price and quantity */}

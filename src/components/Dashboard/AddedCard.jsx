@@ -5,6 +5,9 @@ import DeleteButton from "./DeleteButton";
 
 
 const AddedCard = ({ ticket }) => {
+
+    const isButtonsDisabled = ticket.status == 'rejected';
+
     return (
         <div className="w-full max-w-sm mx-auto h-full flex flex-col animate-fade-in-up">
             <div className="bg-white dark:bg-slate-900 rounded-2xl p-4 flex flex-col flex-1 select-none border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 ease-out group">
@@ -84,14 +87,30 @@ const AddedCard = ({ ticket }) => {
                     </div>
 
                     <div className="flex gap-5">
-                        <Link href={`/dashboard/editticket/${ticket._id}`} className="w-full bg-slate-900 dark:bg-slate-800 hover:bg-emerald-600 dark:hover:bg-lime-400 text-white dark:text-slate-200 hover:text-white dark:hover:text-slate-950 font-bold text-xs py-2.5 rounded-lg flex items-center justify-center gap-1.5 transition-all duration-200 shadow-sm active:scale-[0.98]"  >
+                        <Link href={isButtonsDisabled ? "#" : `/dashboard/editticket/${ticket._id}`}
+                            className={`w-full font-bold text-xs py-2.5 rounded-lg flex items-center justify-center gap-1.5 transition-all duration-200 shadow-sm
+                                ${isButtonsDisabled
+                                    ? "bg-gray-300 text-gray-500 cursor-not-allowed pointer-events-none"
+                                    : "bg-slate-900 dark:bg-slate-800 hover:bg-emerald-600 dark:hover:bg-lime-400 text-white dark:text-slate-200 hover:text-white dark:hover:text-slate-950 active:scale-[0.98]"
+                                }`}>
                             Update
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor" className="w-3.5 h-3.5 transform group-hover:translate-x-0.5 transition-transform"            >
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                strokeWidth="2.5"
+                                stroke="currentColor"
+                                className="w-3.5 h-3.5"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                                />
                             </svg>
                         </Link>
 
-                        <DeleteButton deleteData={ticket} endpoint={'deleteticket'} ></DeleteButton>
+                        <DeleteButton isButtonsDisabled={isButtonsDisabled} deleteData={ticket} endpoint={'deleteticket'} ></DeleteButton>
                     </div>
 
                 </div>

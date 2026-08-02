@@ -69,6 +69,7 @@ const AllTicketPage = () => {
       vendor_name: user.name,
       vendor_email: user.email,
       isAdvertise: false,
+      isHidden: false,
       created_at: new Date()
     };
 

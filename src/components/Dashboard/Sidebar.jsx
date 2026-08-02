@@ -30,27 +30,27 @@ const Sidebar = () => {
   const user = data?.user;
 
   const userNavLinks = [
-    { icon: "📈", href: "/dashboard", label: "Dashboard" },
+    { icon: "📈", href: "/dashboard/user", label: "Dashboard" },
     { icon: "👤", href: "/dashboard/profile", label: "My Profile" },
-    { icon: "📋", href: "/dashboard/mybookings", label: "My Booked Tickets" },
-    { icon: "💳", href: "/dashboard/transaction-history", label: "My Transaction" },
+    { icon: "📋", href: "/dashboard/user/mybookings", label: "My Booked Tickets" },
+    { icon: "💳", href: "/dashboard/user/transaction-history", label: "My Transaction" },
   ];
 
   const vendorNavLinks = [
-    { icon: "📈", href: "/dashboard", label: "Dashboard" },
+    { icon: "📈", href: "/dashboard/vendor", label: "Dashboard" },
     { icon: "👤", href: "/dashboard/profile", label: "My Profile" },
-    { icon: "➕", href: "/dashboard/addticket", label: "Add Tickets" },
-    { icon: "🆕", href: "/dashboard/addedtickets", label: "Added Tickets" },
-    { icon: "📋", href: "/dashboard/requestedbookings", label: "Requested Bookings" },
-    { icon: "📈", href: "/dashboard/revenue-overview", label: "Revenue Overview" }
+    { icon: "➕", href: "/dashboard/vendor/addticket", label: "Add Tickets" },
+    { icon: "🆕", href: "/dashboard/vendor/addedtickets", label: "Added Tickets" },
+    { icon: "📋", href: "/dashboard/vendor/requestedbookings", label: "Requested Bookings" },
+    { icon: "📈", href: "/dashboard/vendor/revenue-overview", label: "Revenue Overview" }
   ];
 
   const adminNavLinks = [
-    { icon: "📈", href: "/dashboard", label: "Dashboard" },
+    { icon: "📈", href: "/dashboard/admin", label: "Dashboard" },
     { icon: "👤", href: "/dashboard/profile", label: "My Profile" },
-    { icon: "📊", href: "/dashboard/manageticket", label: "Manage Ticket" },
-    { icon: "🧑", href: "/dashboard/manage-user", label: "Manage User" },
-    { icon: "🎫", href: "/dashboard/advertise-tickets", label: "Advertise Tickets" }
+    { icon: "📊", href: "/dashboard/admin/manageticket", label: "Manage Ticket" },
+    { icon: "🧑", href: "/dashboard/admin/manage-user", label: "Manage User" },
+    { icon: "🎫", href: "/dashboard/admin/advertise-tickets", label: "Advertise Tickets" }
   ];
 
   const navLinksMap = {

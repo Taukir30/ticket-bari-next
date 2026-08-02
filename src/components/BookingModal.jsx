@@ -80,7 +80,7 @@ export default function BookingModal({ ticket }) {
         timer: 1000
       });
 
-      router.push("/dashboard/mybookings");
+      router.push("/dashboard/user/mybookings");
     }
 
     setIsOpen(false);

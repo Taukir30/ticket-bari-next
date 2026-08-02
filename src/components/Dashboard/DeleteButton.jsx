@@ -5,11 +5,11 @@ import { useRouter } from 'next/navigation';
 import React from 'react';
 import Swal from 'sweetalert2';
 
-const DeleteButton = ({ deleteData, endpoint, text='Delete' }) => {
+const DeleteButton = ({ deleteData, endpoint, text = 'Delete', isButtonsDisabled }) => {
 
     const router = useRouter();
 
-    console.log(deleteData)
+    console.log(isButtonsDisabled)
 
     const handleDelete = async () => {
 
@@ -51,7 +51,7 @@ const DeleteButton = ({ deleteData, endpoint, text='Delete' }) => {
     }
 
     return (
-        <Button onClick={handleDelete} variant="danger-soft">
+        <Button isDisabled={isButtonsDisabled} onClick={handleDelete} variant="danger-soft">
             {text}
         </Button>
     );
