@@ -1,7 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
-import DeleteButton from "./DeleteButton";
 import Countdown from "../Countdown";
 import { Chip } from "@heroui/react";
 

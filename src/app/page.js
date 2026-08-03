@@ -1,5 +1,4 @@
 import Banner from "@/components/Banner";
-import Image from "next/image";
 import Advertisement from "@/components/Advertisement";
 import BookingRoadmap from "@/components/BookingRoadmap";
 import AboutDiscover from "@/components/AboutDiscover";

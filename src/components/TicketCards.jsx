@@ -20,7 +20,7 @@ const TicketCards = ({ ticket }) => {
             className="w-full h-auto object-cover opacity-75 group-hover:scale-105 transition-transform duration-500"
             priority={false}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-t from-slate-950 via-slate-950/40 to-transparent" />
 
           <div className="absolute top-4 left-4 z-10">
             <span className="bg-lime-400 text-slate-950 font-black text-[11px] px-3 py-1.5 rounded-full uppercase tracking-wider shadow-sm">
@@ -53,6 +53,19 @@ const TicketCards = ({ ticket }) => {
               </div>
             </div>
           )}
+        </div>
+
+        <div className="flex flex-col justify-between px-5 sm:px-6">
+          <div className="pt-3 border-t border-slate-100 dark:border-slate-800 shrink-0">
+            <div className="flex flex-wrap justify-between gap-1.5">
+              <p className="text-[10px] text-slate-400 font-extrabold uppercase tracking-widest mb-2.5">
+                {ticket.from_location}
+              </p>
+              <p className="text-[10px] text-slate-400 font-extrabold uppercase tracking-widest mb-2.5">
+                {ticket.to_location}
+              </p>
+            </div>
+          </div>
         </div>
 
         <div className="relative w-full h-4 bg-transparent flex items-center shrink-0">
