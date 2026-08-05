@@ -1,16 +1,15 @@
 import UserAction from "@/components/Dashboard/UserAction";
+import { protectedFetch } from "@/lib/core/server";
 import { Table } from "@heroui/react";
 
 const ManageUserPage = async () => {
 
-  const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/users`,
-    {
-      cache: "no-store",
-    });
-  // const res = await fetch("http://localhost:5000/allusers");
-  const data = await res.json();
+  // const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/users`,
+  //   {
+  //     cache: "no-store",
+  //   });
 
-  const allusers = data;
+  const allusers = await  protectedFetch('/users')
 
   return (
     <div>

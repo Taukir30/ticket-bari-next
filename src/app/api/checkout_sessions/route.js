@@ -52,7 +52,7 @@ export async function POST(request) {
                 price
             },
             mode: 'payment',
-            success_url: `${origin}/dashboard/mybookings/success?session_id={CHECKOUT_SESSION_ID}`,
+            success_url: `${origin}/dashboard/user/mybookings/success?session_id={CHECKOUT_SESSION_ID}`,
         });
         return NextResponse.redirect(session.url, 303)
     } catch (err) {

@@ -19,7 +19,7 @@ const LatestTicket = () => {
     fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/alltickets`)
       .then((res) => res.json())
       .then((data) => {
-        setLatestTickets(data.slice(0, 6));
+        setLatestTickets(data?.result || []);
         setLoading(false);
       })
       .catch((err) => {
@@ -45,13 +45,13 @@ const LatestTicket = () => {
         autoplay={{ delay: 3000, disableOnInteraction: false }} 
         breakpoints={{
           640: {
-            slidesPerView: 2,
+            slidesPerView: 1,
           },
           1024: {
-            slidesPerView: 3,
+            slidesPerView: 2,
           },
           1280: {
-            slidesPerView: 4,
+            slidesPerView: 3,
           },
         }}
         className="pb-12"

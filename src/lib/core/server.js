@@ -12,7 +12,11 @@ export const authHeader = async () => {
 }
 
 export const serverFetch = async (path) => {
-    const res = await fetch(`${baseUrl}${path}`);
+    const res = await fetch(`${baseUrl}${path}`,
+        {
+            cache: "no-store",
+        }
+    );
 
     return handleStatusCode(res);
 }
@@ -20,12 +24,12 @@ export const serverFetch = async (path) => {
 export const protectedFetch = async (path) => {
     const res = await fetch(`${baseUrl}${path}`,
         {
+            cache: "no-store",
             headers: await authHeader()
         }
     );
 
     // handle 401, 403
-
     return handleStatusCode(res);
 }
 
@@ -46,13 +50,14 @@ export const serverMutation = async (path, data, method = 'POST') => {
 
 
 // handle 401, 404, 403
-const handleStatusCode = res => {
+const handleStatusCode = async (res) => {
     if (res.status === 401) {
-        redirect('/unauthorized')
-    }
-    else if (res.status === 403) {
-        redirect('/forbidden');
+        redirect("/unauthorized");
     }
 
-    return res.json()
-}
+    if (res.status === 403) {
+        redirect("/forbidden");
+    }
+
+    return await res.json();
+};

@@ -11,11 +11,11 @@ export const getServerSession = async () => {
 }
 
 export const getUserToken = async () => {
-    const session = await auth.api.getSession({
+    const {token} = await auth.api.getToken({
         headers: await headers()
     })
 
-    return session?.session?.token || null;
+    return token || null;
 }
 
 export const verifyRole = async (role) => {

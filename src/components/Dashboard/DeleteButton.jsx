@@ -9,7 +9,7 @@ const DeleteButton = ({ deleteData, endpoint, text = 'Delete', isButtonsDisabled
 
     const router = useRouter();
 
-    console.log(isButtonsDisabled)
+    // console.log(isButtonsDisabled)
 
     const handleDelete = async () => {
 

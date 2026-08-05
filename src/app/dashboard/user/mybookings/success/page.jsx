@@ -123,7 +123,7 @@ export default async function Success({ searchParams }) {
           {/* <!-- ACTION BUTTONS --> */}
           <div className="space-y-3">
             <Link
-              href="/dashboard/mybookings"
+              href="/dashboard/user/mybookings"
               className="w-full bg-linear-to-r from-[#00a877] to-[#0a3629] text-white font-bold text-sm py-3.5 rounded-full flex items-center justify-center gap-2 shadow-md hover:opacity-90 active:scale-[0.98] transition-all"
             >
               View My Bookings

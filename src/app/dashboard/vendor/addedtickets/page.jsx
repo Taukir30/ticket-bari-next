@@ -1,5 +1,6 @@
 import AddedCard from "@/components/Dashboard/AddedCard";
 import { auth } from "@/lib/auth";
+import { protectedFetch } from "@/lib/core/server";
 import { headers } from "next/headers";
 
 const MyAddedTickets = async () => {
@@ -10,17 +11,17 @@ const MyAddedTickets = async () => {
 
   const user = session?.user;
 
-  console.log(user.email)
+  // console.log(session)
 
-  const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/alltickets?email=${user.email}`,
-    {
-      cache: "no-store",
-    });
-  // const res = await fetch("http://localhost:5000/alltickets");
-  const data = await res.json();
-  const addedtickets = data;
+  // const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/alltickets?email=${user.email}`,
+  //   {
+  //     cache: "no-store",
+  //   });
+  const data = await protectedFetch(`/alltickets?email=${user.email}`);
+  // const data = await res.json();
+  const addedtickets = data.result;
 
-  console.log(addedtickets)
+  // console.log(addedtickets)
 
   return (
     <div className="w-full max-w-7xl mx-auto px-4 py-1">

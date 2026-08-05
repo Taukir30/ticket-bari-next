@@ -53,7 +53,7 @@ const AllTicketPage = () => {
 
     const image_url = imageData.data.url;
 
-    console.log("Uploaded photo URL:", image_url);
+    // console.log("Uploaded photo URL:", image_url);
 
     // Read all normal values
     const ticketData = {
@@ -73,7 +73,7 @@ const AllTicketPage = () => {
       created_at: new Date()
     };
 
-    console.log(ticketData);
+    // console.log(ticketData);
 
     const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/addticket`, {
       method: 'POST',
@@ -85,7 +85,7 @@ const AllTicketPage = () => {
 
     const resdata = await res.json();
 
-    console.log(resdata);
+    // console.log(resdata);
 
     if (resdata.insertedId) {
       Swal.fire({

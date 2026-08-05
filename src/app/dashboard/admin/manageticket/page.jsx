@@ -1,9 +1,7 @@
 import ApproveButton from "@/components/Dashboard/ApproveButton";
 import DeleteButton from "@/components/Dashboard/DeleteButton";
 import RejectButton from "@/components/Dashboard/RejectButton";
-import { FileText, PencilToSquare, TrashBin } from "@gravity-ui/icons";
 import { Button, Chip, Table } from "@heroui/react";
-import Link from "next/link";
 
 const ManageTicketPage = async () => {
 
@@ -13,7 +11,7 @@ const ManageTicketPage = async () => {
     });
   // const res = await fetch("http://localhost:5000/alltickets");
   const data = await res.json();
-  const alltickets = data;
+  const alltickets = data.result;
 
   // console.log(alltickets)
 
