@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Project: TicketBari — Online Ticket Booking Platform
 
-## Getting Started
+## Purpose:
+    The purpose of TicketBari is to provide a convenient and user-friendly platform for discovering and booking Bus, Train, Launch, Plane, and other transportation tickets.
+    The platform provides separate dashboards and functionalities for Users, Vendors, and Admins, making ticket management, booking, payment, and platform administration easier and more efficient.
 
-First, run the development server:
+## Live URL: https://style-decor-client-side.netlify.app
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Key features:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+    For Users:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+       1. Browse admin-approved tickets.
+       2. Search tickets by From → To locations.
+       3. Filter tickets by transport type.
+       4. Sort tickets by price.
+       5. Departure countdown timer.
+       6. Book tickets with quantity selection.
+       7. Booking quantity validation based on available tickets.
+       8. View booked tickets and booking status.
+       9. Pay for accepted bookings using Stripe.
+       10.Automatic ticket quantity reduction after successful payment.
+       11.View transaction/payment history.
+       12.User profile management.
+       13.Dark/Light mode.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+    For Admins:
 
-To learn more about Next.js, take a look at the following resources:
+        1. Manage all tickets.
+        2. Approve or reject vendor tickets.
+        3. Manage platform users.
+        4. Change user roles between User, Vendor, and Admin.
+        5. Mark vendors as fraudulent.
+        6. Hide fraudulent vendors' tickets from the platform.
+        7. Prevent fraudulent vendors from adding new tickets.
+        8. Manage ticket advertisements.
+        9. Revenue and platform statistics.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    For Vendors:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+        1. Add new tickets.
+        2. Manage added tickets.
+        3. Update ticket information.
+        4. Delete tickets.
+        5. Receive booking requests.
+        6. Accept or reject booking requests.
+        7. Revenue overview
 
-## Deploy on Vercel
+## Additional Features
+    1. Pagination for ticket listings
+    2. Loading spinners during data fetching
+    3. Custom error/invalid route page
+    4. Responsive dashboard
+    5. Dark/Light theme
+    6. Ticket search and filtering
+    7. Price sorting
+    8. Advertisement management
+    9. Revenue analytics
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## NPM Packages Used:
+    1. Tailwind CSS
+    2. Better Auth
+    3. Hero UI
+    4. Stripe
+    5. Framer Motion
+    6. Lucide React
+    7. React Toastify
+    8. React Icons
+    9. Swiper
+    10.Recharts
+    11.Sweetalert2
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## How to Run StyleDecor Locally
+
+    1. Make sure Node.js (v16+) and Git are installed
+    2. Clone the repository:
+        git clone https://github.com/Taukir30/ticket-bari-next.git
+    3. Go to the project folder:
+        cd ticket-bari-next
+    4. Install dependencies:
+        npm install
+    5. Create a .env file if required and add environment variables (see .env.example)
+    6. Start the development server:
+        npm run dev
+    7. Open your browser and visit:
+        http://localhost:5173
