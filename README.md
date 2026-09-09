@@ -71,7 +71,7 @@
     10.Recharts
     11.Sweetalert2
 
-## How to Run StyleDecor Locally
+## How to Run TicketBari Locally
 
     1. Make sure Node.js (v16+) and Git are installed
     2. Clone the repository:
