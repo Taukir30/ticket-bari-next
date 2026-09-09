@@ -4,7 +4,7 @@
     The purpose of TicketBari is to provide a convenient and user-friendly platform for discovering and booking Bus, Train, Launch, Plane, and other transportation tickets.
     The platform provides separate dashboards and functionalities for Users, Vendors, and Admins, making ticket management, booking, payment, and platform administration easier and more efficient.
 
-## Live URL: https://style-decor-client-side.netlify.app
+## Live URL: https://ticket-bari-nine.vercel.app
 
 ## Key features:
 
